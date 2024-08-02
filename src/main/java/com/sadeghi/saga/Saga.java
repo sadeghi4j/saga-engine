@@ -29,7 +29,7 @@ public class Saga {
     private boolean completed;
 
     public Saga() {
-        this(defaultEventPublisher());
+        this(defaultStepListener());
     }
 
     public Saga(StepListener stepListener) {
@@ -81,7 +81,7 @@ public class Saga {
         execute(stepExecutionEvent.getStep(), contextVariable);
     }
 
-    private static StepListener defaultEventPublisher() {
+    private static StepListener defaultStepListener() {
         return new DefaultStepListener();
     }
 
